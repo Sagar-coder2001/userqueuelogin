@@ -1,101 +1,64 @@
-
-.loginform-container{
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.login-container{
     width: 100%;
     height: 100vh;
+    overflow: scroll;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid red;
-    overflow: scroll;
 }
-/* .row{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.container{
+    text-align: center;
+    width: 100%;
+    height: 90vh;
+    /* margin-top: 20px; */
 }
- .col-lg-4 img{
-   width: 300px;
-   height: 400px;
-   object-fit: cover;
-   background-position: center;
+.col-lg-6 {
+    margin-top: 30px;
+
 }
- 
+.hotelimg-container{
+    width: 100%
+}
+.hotelimg-container img{
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    background-position: center;
+    background-size: cover;
+}
+
+
+
+
+
 .form-container{
-    border-radius: 10px;
-    width: 450px;
-    border: 2px solid rgb(0, 0, 0);
-    text-align: center;
-    background-color: rgb(255, 255, 255);
-    padding: 10px 20px;
-    margin: 10px;
+    width: 100%;
+    margin: 0px auto;
+    padding: 20px 10px;
+    box-shadow: 0px 0px 8px rgb(23, 201, 186) inset;
 }
-.form-container img{
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-}
-
-
-.form-container h2{
-    text-align: center;
-    margin: 15px 0px;
-    font-size: 30px;
-    text-transform: uppercase;
-    color: crimson;
+form span{
+    font-size: 20px;
+    margin: 10px 0px;
 }
 .input-container{
-    margin: 5px auto;
-    width: 100%;
+    width: 90%;
+    margin: 8px auto;
 }
-input{
-    width: 100%;
-    padding: 8px;
-    font-size: 15px;
-    color: black;
-    margin: 6px auto;
-    border: 1px solid;
-    outline: none;
+.input-container label{
+    font-size: 20px;
 }
-.popbtn{
-    width: 80%;
-    margin: auot;
+.gender{
+    font-size: 20px;
 }
-.forget-pass a{
-    text-decoration: none;
-    text-align: center;
-    font-size: 16px;
-    font-family: Arial, Helvetica, sans-serif;
+.radio-label{
+    margin-top: 3px;
 }
-
-.login-container button{
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 18px;
-    font-weight: bold;
-    color: white;
-    width: 50%;
-    border: none;
-    background-color: green;
+.radio-input{
+    margin: 0px 8px;
 }
-.forgetpass a{
-    color: blue;
-    margin-left: 150px;
-    text-decoration: none;
-}
-.create{
-    color: white;
-}
-.create a{
-    margin-top: 15px;
-    color: blue;
-    text-decoration: none;
-}
-@media screen and (max-width:500px) {
-    .form-container{
-        width: 90% ;
-        border-radius: 8px;
-    }
-   
-} */
-
-/* main container */

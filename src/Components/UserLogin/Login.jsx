@@ -1,129 +1,128 @@
-import React, { useState } from 'react';
-import "./Login.css";
-// import { useNavigate } from 'react-router-dom';
+import React from 'react'
+import './Login.css';
 
+const Login = () => {
+    return (
+        <div>
+            <div className="login-container">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-6">
+                           <div className="hotelimg-container">
+                            <img src="https://img.freepik.com/free-photo/swimming-pool_74190-1977.jpg?t=st=1728582687~exp=1728586287~hmac=929ff3da9e1e2cf6a5f7ce181ad1b0857151c99452110578beae3d5a7d28dbe4&w=740" alt="" />
+                           </div>
+                        </div>
+                        <div className="col-lg-6">
+                            {/* form start here */}
+                            <div className="form-container">
+                                <form action="">
+                                    <span style={{fontSize:'30px', margin:'60px 0px'}}>
+                                       Registration
+                                    </span>
+                                    <div className='input-container text-start'>
+                                        <label htmlFor="username" >Name</label>
+                                        <input
+                                            type='text'
+                                            // value={login.email}
+                                            className="form-control"
+                                            // onChange={showLoginData}
+                                            name='username'
+                                        />
+                                    </div>
+                                    <div className='input-container text-start'>
+                                    <label htmlFor="username" >Contact No</label>
+                                        <input
+                                            type='tel'
+                                            // value={login.email}
+                                            className="form-control"
+                                            // onChange={showLoginData}
+                                            name='Contact'
+                                            maxLength={10}
+                                        />
+                                    </div>
+                                    <div className='input-container text-start'>
+                                    <label htmlFor="username" >No Off Peoples</label>
+                                        <input
+                                            type='number'
+                                            // value={login.password}
+                                            className="form-control"
+                                            // onChange={showLoginData}
+                                            name='Peoples'
+                                        />
+                                    </div>
 
-function Login() {
-  const [login, setLogin] = useState({
-    username: '',
-    password: ''
-  });
-  const [isloggedin, setIsLoggedIn] = useState(null); // Use null to determine no status initially
-//   const navigate = useNavigate();
+                                    <div className='input-container text-start'>
+                                    <span className='gender'>Gender</span> <br></br>
+                                    <label className="radio-label">
+                                        <input
+                                            type="radio"
+                                            name="gender"
+                                            value="male"
+                                            // checked={userdetails.gender === 'male'}
+                                            // onChange={handleChange}
+                                            className="radio-input"
+                                        />
+                                        Male
+                                    </label>
+                                    <label className="radio-label">
+                                        <input
+                                            type="radio"
+                                            name="gender"
+                                            value="female"
+                                            // checked={userdetails.gender === 'female'}
+                                            // onChange={handleChange}
+                                            className="radio-input"
+                                        />
+                                        Female
+                                    </label>
+                                    <label className="radio-label">
+                                        <input
+                                            type="radio"
+                                            name="gender"
+                                            value="other"
+                                            // checked={userdetails.gender === 'other'}
+                                            // onChange={handleChange}
+                                            className="radio-input"
+                                        />
+                                        Other
+                                    </label>
+                                        </div>
+                                        <div className="input-container text-start">
+                                        <span className='gender'>Rooms</span> <br></br>
+                                        <label className="radio-label">
+                                        <input
+                                            type="radio"
+                                            name="ac"
+                                            value="ac"
+                                            // checked={userdetails.gender === 'other'}
+                                            // onChange={handleChange}
+                                            className="radio-input"
+                                        />
+                                        Ac
+                                    </label>
+                                    <label className="radio-label">
+                                        <input
+                                            type="radio"
+                                            name="ac"
+                                            value="nonac"
+                                            // checked={userdetails.gender === 'other'}
+                                            // onChange={handleChange}
+                                            className="radio-input"
+                                        />
+                                        Non Ac
+                                    </label>
 
-  const showLoginData = (e) => {
-    setLogin((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }));
-  };
-
-  const allowLogin = async (e) => {
-    e.preventDefault();
-    try {
-      const formData = new FormData();
-      formData.append('username', login.username);
-      formData.append('password', login.password);
-
-      const response = await fetch('http://192.168.1.25/faceSearch/photographerLogin.php?do=login', {
-        method: 'POST',
-        body: formData,
-      });
-
-      const data = await response.json();
-
-      console.log(data);
-
-      localStorage.setItem('islogin', data.Token);
-      localStorage.setItem('username', login.username)
-
-      if (data.Status === true) {
-        setIsLoggedIn(true);
-        // navigate('/Main')
-      } else {
-        setIsLoggedIn(false);
-      }
-      clearLogin();
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  const clearLogin = () => {
-    setLogin({
-      username: '',
-      password: ''
-    });
-  };
-
-  const closePopup = () => {
-    setIsLoggedIn(null); // Reset login status
-  };
-
-  return (
-    <>
-      <div className='loginform-container'>
-
-        {/* <div className="row">
-            <div className="col-md-4">
+                                        </div>
+                                    <div className="submit-container btn btn-info w-50 mt-3">Submit</div>
+                                 
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
-       <div className="col-md-8">
-        {isloggedin === null ? (
-          <div className="form-container">
-            <h2>Login</h2>
-            <img src="https://th.bing.com/th?id=OIP.mrfb_atnkblnmsDiAbLNKwHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" alt="Login" />
-            <form action="" autoComplete='off'>
-              <span className='create'>Don't Have An Account <a href="">Create One</a></span>
-              <div className='input-container'>
-                <input
-                  type='text'
-                  value={login.username}
-                  placeholder='Username'
-                  className="form-control"
-                  onChange={showLoginData}
-                  name='username'
-                />
-              </div>
-              <div className='input-container'>
-                <input
-                  type='password'
-                  value={login.password}
-                  placeholder='Password'
-                  className="form-control"
-                  onChange={showLoginData}
-                  name='password'
-                />
-                <span className='forgetpass'><a href="#">Forgot Password?</a></span>
-              </div>
-              <div className='login-container'>
-                <button className='login' id='login' onClick={allowLogin}>Login</button>
-              </div>
-            </form>
-          </div>
-        ) : (
-
-          <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            <strong><h3>Congratulation!</h3></strong> <h5>{isloggedin ? 'User Logged In Successfully!' : 'Login Failed. Please Try Again.'}</h5>
-            <button type="button" onClick={closePopup} className='popbtn'>ok</button>
-          </div>
-        )}
         </div>
-        </div> */}
-
-        <div className="row">
-            <div className="col-md-4">
-                ss
-            </div>
-
-            <div className="col-md-8">
-            </div>
-
-        </div>
-
-      </div>
-    </>
-  );
+    )
 }
 
-export default Login;
+export default Login
